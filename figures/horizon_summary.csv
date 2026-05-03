@@ -1,0 +1,4 @@
+pair,horizon_days,plateau_poly,plateau_kalshi,plateau_wedge,implied_q_at_pi_zero
+Polymarket Feb 28  vs  Kalshi Mar 01,1,0.9742,0.08,0.8942,0.9179
+Polymarket Mar 31  vs  Kalshi Apr 01,31,0.9793,0.405,0.5743,0.5864
+Polymarket Dec 31  vs  Kalshi Sep 01,184,0.9893,0.585,0.4043,0.4087

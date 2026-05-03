@@ -1,0 +1,5 @@
+ticker,n_window,n_anomaly,anomaly_buy_size,anomaly_sell_size,anomaly_net_signed,anomaly_price_min,anomaly_price_max,anomaly_price_mean,pre_net_signed,post_net_signed,anomaly_buy_to_sell_ratio
+KXKHAMENEIOUT-AKHA-26MAR01,7782,2299,609565,619669,-10104,0.07,0.4,0.1671,430002,-118580,0.98
+KXKHAMENEIOUT-AKHA-26APR01,6618,1605,178520,164747,13773,0.01,0.8,0.5847,148405,87436,1.08
+KXKHAMENEIOUT-AKHA-26JUL01,1999,486,32659,40374,-7715,0.33,0.77,0.6476,34148,11798,0.81
+KXKHAMENEIOUT-AKHA-26SEP01,1228,330,21661,31076,-9415,0.21,0.99,0.666,8370,-21227,0.7

@@ -1,4 +1,4 @@
-# Replication package — *Kalshi's Ceiling*
+﻿# Replication package â€” *Kalshi's Ceiling*
 
 Replication code and data for:
 
@@ -9,25 +9,25 @@ Replication code and data for:
 
 ```
 .
-├── README.md                   <- this file
-├── LICENSE                     <- MIT
-├── CITATION.cff                <- citation metadata for GitHub auto-cite
-├── requirements.txt            <- Python dependencies
-├── scripts/
-│   ├── 01_pull_polymarket_khamenei.py
-│   ├── 02_pull_kalshi_khamenei.py
-│   ├── 03_build_wedge.py
-│   ├── 04_horizon_comparison.py
-│   ├── 11_anomaly_1600.py
-│   ├── 12_spread_analysis.py
-│   └── 13_implied_pi.py
-├── data/
-│   ├── polymarket/             <- pulled CSVs (created by 01_*.py)
-│   └── kalshi/                 <- pulled CSVs (created by 02_*.py)
-├── figures/                    <- generated PNG outputs
-└── docs/
-    ├── methodology.md          <- API quirks, schema notes, regime definitions
-    └── changelog.md            <- version history
+â”œâ”€â”€ README.md                   <- this file
+â”œâ”€â”€ LICENSE                     <- MIT
+â”œâ”€â”€ CITATION.cff                <- citation metadata for GitHub auto-cite
+â”œâ”€â”€ requirements.txt            <- Python dependencies
+â”œâ”€â”€ scripts/
+â”‚   â”œâ”€â”€ 01_pull_polymarket_khamenei.py
+â”‚   â”œâ”€â”€ 02_pull_kalshi_khamenei.py
+â”‚   â”œâ”€â”€ 03_build_wedge.py
+â”‚   â”œâ”€â”€ 04_horizon_comparison.py
+â”‚   â”œâ”€â”€ 11_anomaly_1600.py
+â”‚   â”œâ”€â”€ 12_spread_analysis.py
+â”‚   â””â”€â”€ 13_implied_pi.py
+â”œâ”€â”€ data/
+â”‚   â”œâ”€â”€ polymarket/             <- pulled CSVs (created by 01_*.py)
+â”‚   â””â”€â”€ kalshi/                 <- pulled CSVs (created by 02_*.py)
+â”œâ”€â”€ figures/                    <- generated PNG outputs
+â””â”€â”€ docs/
+    â”œâ”€â”€ methodology.md          <- API quirks, schema notes, regime definitions
+    â””â”€â”€ changelog.md            <- version history
 ```
 
 ## Reproducing the paper end-to-end
@@ -43,7 +43,7 @@ pip install -r requirements.txt
 ```
 
 Tested on Python 3.11+ on Ubuntu 24.04 LTS and Windows 11. No authentication or
-API keys required — both Polymarket Gamma/CLOB and Kalshi trade-api v2 are
+API keys required â€” both Polymarket Gamma/CLOB and Kalshi trade-api v2 are
 public read endpoints.
 
 ### 2. Pull data
@@ -68,7 +68,7 @@ python scripts/13_implied_pi.py             # Figure 5
 ```
 
 PNGs land in `figures/`. Summary CSVs land alongside each figure
-(e.g. `figures/horizon_summary.csv`). Each script is independent — you can run
+(e.g. `figures/horizon_summary.csv`). Each script is independent â€” you can run
 them in any order after step 2.
 
 ## Reproducing without re-pulling data
@@ -79,11 +79,12 @@ Skip step 2 if `data/polymarket/*.csv` and `data/kalshi/*.csv` already exist.
 
 ## Caveats and known issues
 
-- **Polymarket Data API trade pagination caps at offset 3,500.** Trade-level
-  analysis on the Polymarket side hits this cap on the headline contract. The
-  paper's empirical content does not depend on the trades beyond this cap; minute
-  midprices are complete. The full ~50,000+ trade history would require the
-  Polygon subgraph (left for future work).
+- **Polymarket Data API trade pagination caps at offset 3,500, and the trade
+  endpoint returned 400 errors during the data pull window. Polymarket trades
+  CSVs are therefore not included in this replication snapshot. The paper's
+  empirical analysis does not depend on Polymarket trade-level data; minute
+  midprices (included) are sufficient. The full ~50,000+ trade history would
+  require the Polygon subgraph (left for future work).
 - **Kalshi candle bid/ask cells are nested dicts.** The `yes_bid` and `yes_ask`
   fields in the Kalshi candlesticks endpoint return strings like
   `"{'price': 9, 'close_dollars': 0.09}"`. Extraction requires
@@ -108,7 +109,7 @@ If you use this code or data, please cite:
 }
 ```
 
-GitHub provides automatic citation export via `CITATION.cff` — click "Cite this
+GitHub provides automatic citation export via `CITATION.cff` â€” click "Cite this
 repository" on the repo home page.
 
 ## License
@@ -120,4 +121,4 @@ proprietary content is redistributed.
 ## Contact
 
 Lim Boon Chuan, Independent researcher, Singapore
-boonchuan@singapore.to · SSRN Author ID 11094408
+boonchuan@singapore.to Â· SSRN Author ID 11094408
