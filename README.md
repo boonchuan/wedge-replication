@@ -86,9 +86,7 @@ Skip step 2 if `data/polymarket/*.csv` and `data/kalshi/*.csv` already exist.
   midprices (included) are sufficient. The full ~50,000+ trade history would
   require the Polygon subgraph (left for future work).
 - **Kalshi candle bid/ask cells are nested dicts.** The `yes_bid` and `yes_ask`
-  fields in the Kalshi candlesticks endpoint return strings like
-  `"{'price': 9, 'close_dollars': 0.09}"`. Extraction requires
-  `ast.literal_eval` — see `docs/methodology.md`.
+  fields in the Kalshi candlesticks endpoint return strings like `"{'price': 9, 'close_dollars': 0.09}"`. Extraction requires `ast.literal_eval`. See `docs/methodology.md`.
 - **News timestamps are wire-service approximate.** The 06:15 UTC news-arrival
   marker is identified from Polymarket's price reaction, not from any wire
   timestamp. The 17:10 UTC informed-anticipation sweep on Kalshi is identified

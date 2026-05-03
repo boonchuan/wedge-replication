@@ -1,4 +1,4 @@
-# Methodology notes
+﻿# Methodology notes
 
 Practical notes on data pulling, schema parsing, and analysis decisions. Useful
 for replicators who want to extend the analysis or apply the same framework to
@@ -8,10 +8,10 @@ other dual-listed prediction-market contracts.
 
 ### Endpoints used
 
-- `https://gamma-api.polymarket.com/markets` — market metadata (slug, conditionId,
+- `https://gamma-api.polymarket.com/markets` â€” market metadata (slug, conditionId,
   CLOB token IDs, market description, dates, volume, status). Requires
   `closed=true&archived=true` for resolved markets.
-- `https://clob.polymarket.com/prices-history` — historical price data. Requires
+- `https://clob.polymarket.com/prices-history` â€” historical price data. Requires
   `market` (CLOB token ID), `startTs` and `endTs` Unix timestamps, and `fidelity`
   in minutes.
 
@@ -32,13 +32,13 @@ require trades beyond the cap.
 
 ### Endpoints used
 
-- `https://api.elections.kalshi.com/trade-api/v2/series/<series>/markets` — market
+- `https://api.elections.kalshi.com/trade-api/v2/series/<series>/markets` â€” market
   metadata. Requires `with_nested_markets=true` to expand the series into its
   individual markets.
 - `https://api.elections.kalshi.com/trade-api/v2/markets/<ticker>/candlesticks`
-  — minute-resolution OHLC + bid/ask + volume + open interest.
+  â€” minute-resolution OHLC + bid/ask + volume + open interest.
 - `https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=<ticker>`
-  — individual trade prints.
+  â€” individual trade prints.
 
 ### Candlestick schema (the nested-dict gotcha)
 
@@ -76,24 +76,24 @@ yes_price_dollars, ts_utc
 ```
 
 Prices are already in dollars (no /100 conversion). `taker_side` is `"yes"` or
-`"no"` indicating which side lifted the book — directly identifies the
+`"no"` indicating which side lifted the book â€” directly identifies the
 aggressor for signed-volume reconstruction without recourse to the Lee-Ready
 quote test.
 
 ## Regime definitions for the Feb 28 event window
 
-The four regimes used in §5 of the paper, all UTC:
+The four regimes used in Â§5 of the paper, all UTC:
 
 | Regime | Start | End | Identifier |
 |---|---|---|---|
 | Pre-news | Feb 27 18:00 | Feb 28 06:14 | Polymarket flat at 0.013 |
 | News arrival | Feb 28 06:15 | Feb 28 13:00 | Polymarket reacts; news ambiguous |
 | Path resolution | Feb 28 13:00 | Feb 28 17:10 | Netanyahu/IDF reports; wedge widens |
-| Plateau | Feb 28 17:10 | Mar 1 03:06 | Kalshi locks at 0.08; wedge ≈ 0.89 |
+| Plateau | Feb 28 17:10 | Mar 1 03:06 | Kalshi locks at 0.08; wedge â‰ˆ 0.89 |
 
 The 17:10 transition is identified from Kalshi's signed-volume series (a
 ~150,000-contract net sell sweep concentrated in five minutes). See
-§5.3 of the paper.
+Â§5.3 of the paper.
 
 ## Time-zone handling
 
