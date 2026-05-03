@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+title: "Replication package for Kalshi's Ceiling"
+message: "If you use this software, please cite the paper and this repository."
+type: software
+authors:
+  - family-names: "Lim"
+    given-names: "Boon Chuan"
+    email: "boonchuan@singapore.to"
+    affiliation: "Independent researcher, Singapore"
+preferred-citation:
+  type: article
+  title: "Kalshi's Ceiling: Settlement Asymmetry and the Intraday Limits of Cross-Venue Repricing in Event Contracts"
+  authors:
+    - family-names: "Lim"
+      given-names: "Boon Chuan"
+  year: 2026
+  notes: "SSRN Working Paper"
+keywords:
+  - prediction-markets
+  - event-contracts
+  - settlement-risk
+  - limits-to-arbitrage
+  - cross-venue-price-discovery
+  - polymarket
+  - kalshi
+  - microstructure
+license: MIT
