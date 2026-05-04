@@ -1,4 +1,4 @@
-cff-version: 1.2.0
+﻿cff-version: 1.2.0
 title: "Replication package for Kalshi's Ceiling"
 message: "If you use this software, please cite the paper and this repository."
 type: software
@@ -15,6 +15,7 @@ preferred-citation:
       given-names: "Boon Chuan"
   year: 2026
   notes: "SSRN Working Paper"
+  url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6704139"
 keywords:
   - prediction-markets
   - event-contracts
