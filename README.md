@@ -3,7 +3,7 @@
 Replication code and data for:
 
 > Lim, Boon Chuan (2026). "Kalshi's Ceiling: Settlement Asymmetry and the Intraday Limits of Cross-Venue Repricing in Event Contracts."
-> SSRN Working Paper. Available at: [SSRN URL once posted]
+> SSRN Working Paper. Available at: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6704139
 
 ## What this repo contains
 
@@ -103,7 +103,7 @@ If you use this code or data, please cite:
   author = {Lim, Boon Chuan},
   year   = {2026},
   note   = {SSRN Working Paper},
-  url    = {https://ssrn.com/abstract=XXXXXXX}
+  url    = {https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6704139}
 }
 ```
 
